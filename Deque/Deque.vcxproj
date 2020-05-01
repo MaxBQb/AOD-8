@@ -149,11 +149,11 @@
   <ItemGroup>
     <ClCompile Include="Deque.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="City.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Deque.h" />
-    <ClInclude Include="Person.h" />
+    <ClInclude Include="City.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

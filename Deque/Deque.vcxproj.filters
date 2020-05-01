@@ -21,7 +21,7 @@
     <ClCompile Include="Deque.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Person.cpp">
+    <ClCompile Include="City.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="Deque.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Person.h">
+    <ClInclude Include="City.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
