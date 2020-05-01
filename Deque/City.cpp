@@ -18,12 +18,12 @@ bool City::operator ==(City& other)
 	return _name == other._name && _peoplesCount == other._peoplesCount;
 }
 
-istream& City::operator>>(istream& in, City& clone)
+istream& operator>>(istream& in, City& clone)
 {
 	return in >> clone._name >> clone._peoplesCount;
 }
 
-ostream& City::operator<<(ostream& out, City& clone)
+ostream& operator<<(ostream& out, City& clone)
 {
 	return out << clone._name << ' ' << clone._peoplesCount;
 }

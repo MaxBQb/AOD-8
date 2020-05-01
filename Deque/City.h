@@ -14,7 +14,8 @@ private:
 public:
 	City(string name, long peoplesCount);
 	City();
+	
 	bool operator ==(City& other);
-	istream& operator >>(istream& in, City& clone);
-	ostream& operator <<(ostream& out, City& clone);
+	friend istream& operator >>(istream& in, City& clone);
+	friend ostream& operator <<(ostream& out, City& clone);
 };
