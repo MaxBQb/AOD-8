@@ -45,7 +45,7 @@ private:
 	};
 
 	Node* _head;
-	unsigned _nodes—ount;
+	unsigned _nodesCount;
 	void _remove_node(Node* node, Node* previous = nullptr);
 	Node* _getElement(unsigned index);
 	Node* _search(T value, Node* element = nullptr);

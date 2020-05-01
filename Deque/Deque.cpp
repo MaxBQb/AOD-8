@@ -6,7 +6,7 @@ using std::cout;
 using std::cin;
 
 template <typename T>
-Deque<T>::Deque() : _head(nullptr), _nodesСount(0)
+Deque<T>::Deque() : _head(nullptr), _nodesCount(0)
 {
 }
 
@@ -25,21 +25,21 @@ Deque<T>::Deque(const Deque& obj)
 template <typename T>
 void Deque<T>::insert(T element, unsigned pos)
 {
-	if (_nodesСount == 0)
+	if (_nodesCount == 0)
 		_head = new Node(element);
 	else
 	{
 		Node* current = _getElement(pos - 1);
 		current->next = new Node(element, current->next);
 	}
-	_nodesСount++;
+	_nodesCount++;
 }
 
 // Добавление элемента (до pos)
 template <typename T>
 void Deque<T>::insert_before(T element, unsigned pos)
 {
-	if (_nodesСount == 0)
+	if (_nodesCount == 0)
 		_head = new Node(element);
 	else if (pos == 0)
 		_head = new Node(element, _head);
@@ -48,14 +48,14 @@ void Deque<T>::insert_before(T element, unsigned pos)
 		Node* current = _getElement(pos - 1);
 		_getElement(pos - 1)->next = new Node(element, current->next);
 	}
-	_nodesСount++;
+	_nodesCount++;
 }
 
 // Добавление элемента в конец
 template <typename T>
 void Deque<T>::push_back(T element)
 {
-	insert(element, _nodesСount);
+	insert(element, _nodesCount);
 }
 
 // Добавление элемента в начало
@@ -94,7 +94,7 @@ bool Deque<T>::remove(T value)
 	if (found == nullptr)
 		return false;
 	_remove_node(found, _getPrevious(found));
-	_nodesСount--;
+	_nodesCount--;
 	return true;
 }
 
@@ -103,7 +103,7 @@ bool Deque<T>::remove(T value)
 template <typename T>
 bool Deque<T>::remove_at(unsigned pos)
 {
-	if (pos >= _nodesСount)
+	if (pos >= _nodesCount)
 		return false;
 	if (pos == 0)
 		_remove_node(_head);
@@ -114,7 +114,7 @@ bool Deque<T>::remove_at(unsigned pos)
 			return false;
 		_remove_node(previous->next, previous);
 	}
-	_nodesСount--;
+	_nodesCount--;
 	return true;
 }
 
@@ -134,7 +134,7 @@ unsigned Deque<T>::remove_all(T value)
 template <typename T>
 bool Deque<T>::pop_back()
 {
-	return remove_at(_nodesСount - 1);
+	return remove_at(_nodesCount - 1);
 }
 
 // Поиск одного элемента по значению
@@ -166,7 +166,7 @@ vector<unsigned> Deque<T>::find_all(T value)
 			break;
 		i++;
 	}
-	while (i < _nodesСount);
+	while (i < _nodesCount);
 	return founds;
 }
 
@@ -198,7 +198,7 @@ unsigned Deque<T>::update_all(T oldValue, T newValue)
 		current = current->next;
 		i++;
 	}
-	while (i < _nodesСount);
+	while (i < _nodesCount);
 	return i;
 }
 
@@ -206,14 +206,14 @@ unsigned Deque<T>::update_all(T oldValue, T newValue)
 template <typename T>
 unsigned Deque<T>::size()
 {
-	return _nodesСount;
+	return _nodesCount;
 }
 
 // Выводит список на экран
 template <typename T>
 void Deque<T>::print_all()
 {
-	if (_nodesСount == 0)
+	if (_nodesCount == 0)
 	{
 		cout << "Список пуст!" << endl;
 		return;
@@ -245,7 +245,7 @@ bool Deque<T>::erase(unsigned start, unsigned stop)
 template <typename T>
 bool Deque<T>::erase(unsigned start)
 {
-	return erase(start, _nodesСount);
+	return erase(start, _nodesCount);
 }
 
 // Удаляет все элементы
@@ -280,7 +280,7 @@ void Deque<T>::_remove_node(Node* node, Node* previous)
 template <typename T>
 typename Deque<T>::Node* Deque<T>::_getElement(unsigned index)
 {
-	if (index >= _nodesСount)
+	if (index >= _nodesCount)
 		return nullptr;
 	Node* element = _head;
 	for (unsigned i = 0; i < index; i++)
