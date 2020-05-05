@@ -9,7 +9,7 @@ City::City(string name, long peoplesCount): _name(std::move(name)), _peoplesCoun
 {
 }
 
-City::City(): _name("___"), _peoplesCount(0)
+City::City(): _name("Unknown"), _peoplesCount(0)
 {
 }
 
